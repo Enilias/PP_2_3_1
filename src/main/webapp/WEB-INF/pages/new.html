@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New User</title>
+</head>
+<body>
+<form th:method="post" th:action="@{new}" th:object="${user}">
+  <label for="name">Name</label>
+  <input name="name" type="text" id="name">
+  <br>
+  <label for="surname">Surname</label>
+  <input name="surname" type="text" id="surname">
+  <br>
+  <input type="submit" value="Add User">
+</form>
+</body>
+</html>
