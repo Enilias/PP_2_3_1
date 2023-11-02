@@ -9,7 +9,7 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>SurName</th>
+        <th>Sur-Name</th>
         <th>Delete</th>
     </tr>
     <th:block th:each="user : ${users}">
@@ -18,12 +18,20 @@
             <td th:text="${user.getName()}"></td>
             <td th:text="${user.getSurname()}"></td>
             <td>
-                <form method="post" th:action="@{/all.html}" th:object="${user.getId()}">
+                <form method="post" th:action="@{/delete.html}" th:object="${user.getId()}">
                     <button type="submit">Delete</button>
                 </form>
             </td>
         </tr>
     </th:block>
 </table>
+<br>
+<br>
+<form action="new.html" target="_blank">
+<button>Add User</button>
+</form>
+<form action="delete.html" target="_blank">
+    <button>DELETE</button>
+</form>
 </body>
 </html>

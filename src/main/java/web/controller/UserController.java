@@ -27,9 +27,8 @@ public class UserController {
     }
 
     @GetMapping("/new")
-    public String newUser(Model model) {
+    public void newUser(Model model) {
         model.addAttribute("user", new User());
-        return "/new";
     }
 
     @PostMapping("/new")
@@ -39,8 +38,9 @@ public class UserController {
     }
 
     @PostMapping("/delete")
-    public void delete(@RequestParam("id") int id) {
+    public String delete(@RequestParam("id") int id) {
         userService.delete(id);
+        return "redirect:all";
     }
 
 
