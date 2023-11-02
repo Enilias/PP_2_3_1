@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>All Users</title>
@@ -18,7 +18,7 @@
             <td th:text="${user.getName()}"></td>
             <td th:text="${user.getSurname()}"></td>
             <td>
-                <form method="post" th:action="@{/delete?id={id}(id=${user.id})}" th:object="${user.getId()}">
+                <form method="post" th:action="@{/delete?id={id}(id=${user.id})}">
                     <button type="submit">Delete</button>
                 </form>
             </td>
@@ -28,7 +28,7 @@
 <br>
 <br>
 <form action="new.html" target="_blank">
-<button>Add User</button>
+    <button>Add User</button>
 </form>
 </body>
 </html>
