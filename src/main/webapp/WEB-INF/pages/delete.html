@@ -5,7 +5,9 @@
     <title>Delete</title>
 </head>
 <body>
-<form th:method="post" th:action="@{delete.html}" th:object="${id}">
+/*@thymesVar id="id" type="web"*/
+<!--/*@thymesVar id="id" type="web"*/-->
+<form th:method="post" th:action="@{/delete}" th:object="${id}">
   <label for="name">ID</label>
   <input name="name" type="text" id="name">
   <input type="submit" value="DELETE">
