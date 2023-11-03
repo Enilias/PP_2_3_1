@@ -32,8 +32,20 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
+    @Transactional
     public User getUser(int id) {
         return entityManager.find(User.class, id);
+    }
+
+    @Override
+    @Transactional
+    public void change(int id, String name, String surname) {
+        User user = new User();
+        user.setId(id);
+        User user1 = entityManager.merge(user);
+        user1.setName(name);
+        user1.setSurname(surname);
+        entityManager.persist(user1);
     }
 
 }
