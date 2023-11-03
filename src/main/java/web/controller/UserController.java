@@ -43,5 +43,11 @@ public class UserController {
         return "redirect:all";
     }
 
+    @PostMapping("/update")
+    public String update(@RequestParam("id") int id, String name, String surname) {
+        userService.update(id, name, surname);
+        return "redirect:all";
+    }
+
 
 }

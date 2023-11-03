@@ -13,5 +13,5 @@ public interface UserDao {
 
     User getUser(int id);
 
-    public void change(int id, String name, String surname);
+    public void update(int id, String name, String surname);
 }

@@ -7,6 +7,7 @@ import web.model.User;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
+import java.util.Objects;
 
 @Repository
 public class UserDaoImpl implements UserDao {
@@ -39,13 +40,13 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     @Transactional
-    public void change(int id, String name, String surname) {
-        User user = new User();
-        user.setId(id);
-        User user1 = entityManager.merge(user);
-        user1.setName(name);
-        user1.setSurname(surname);
-        entityManager.persist(user1);
+    public void update(int id, String name, String surname) {
+        User user = getUser(id);
+        if (Objects.nonNull(user)) {
+            user.setName(name);
+            user.setSurname(surname);
+            entityManager.merge(user);
+        }
     }
 
 }
