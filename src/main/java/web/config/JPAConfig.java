@@ -36,7 +36,7 @@ public class JPAConfig {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/pre_project?serverTimezone=UTC&useSSL=false");
         dataSource.setUsername("root");
-        dataSource.setPassword("enias");
+        dataSource.setPassword("enias535");
         return dataSource;
     }
 

@@ -43,9 +43,15 @@ public class UserController {
         return "redirect:all";
     }
 
+    @GetMapping("/update")
+    public void getUpdate(@RequestParam("id") int id, Model model) {
+        model.addAttribute("user", userService.getUser(id));
+    }
+
     @PostMapping("/update")
-    public String update(@RequestParam("id") int id, String name, String surname) {
-        userService.update(id, name, surname);
+    public String update(@ModelAttribute("user") User user) {
+        System.out.println(user.getId());
+        userService.update(user.getId(), user.getName(), user.getSurname());
         return "redirect:all";
     }
 

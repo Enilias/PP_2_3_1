@@ -10,6 +10,7 @@
         <th>ID</th>
         <th>Name</th>
         <th>Sur-Name</th>
+        <th>Update</th>
         <th>Delete</th>
     </tr>
     <th:block th:each="user : ${users}">
@@ -17,6 +18,9 @@
             <td th:text="${user.getId()}"></td>
             <td th:text="${user.getName()}"></td>
             <td th:text="${user.getSurname()}"></td>
+            <td>
+                <a th:href="@{/update?id={id}(id=${user.id})}">Update</a>
+            </td>
             <td>
                 <form method="post" th:action="@{/delete?id={id}(id=${user.id})}">
                     <button type="submit">Delete</button>
