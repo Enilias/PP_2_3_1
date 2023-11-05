@@ -50,7 +50,6 @@ public class UserController {
 
     @PostMapping("/update")
     public String update(@ModelAttribute("user") User user) {
-        System.out.println(user.getId());
         userService.update(user.getId(), user.getName(), user.getSurname());
         return "redirect:all";
     }
