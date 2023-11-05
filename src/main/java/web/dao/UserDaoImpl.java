@@ -33,7 +33,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
     public User getUser(int id) {
         return entityManager.find(User.class, id);
     }
