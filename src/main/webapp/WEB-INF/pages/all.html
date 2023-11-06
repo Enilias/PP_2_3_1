@@ -28,7 +28,7 @@
                 <button><a th:href="@{/update?id={id}(id=${user.id})}" target="_blank" class="style">Update</a></button>
             </td>
             <td>
-                <form method="post" th:action="@{/delete?id={id}(id=${user.id})}">
+                <form th:method="delete" th:action="@{/delete?id={id}(id=${user.id})}">
                     <button type="submit">Delete</button>
                 </form>
             </td>

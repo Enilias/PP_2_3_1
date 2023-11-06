@@ -6,7 +6,7 @@
 </head>
 <body>
 <!--/*@thymesVar id="user" type="web"*/-->
-<form th:method="post" th:action="@{update}" th:object="${user}">
+<form th:method="patch" th:action="@{update}" th:object="${user}">
     <input name="id" type="hidden" id="id" th:value="${user.getId()}">
     <label for="name">Name</label>
     <input name="name" type="text" id="name" th:value="${user.getName()}">
